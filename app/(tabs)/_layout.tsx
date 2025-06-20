@@ -35,11 +35,8 @@ const TabIcon = ({ focused, icon, title }: any) => {
 
   // Si la pestaña no está activa, solo se muestra el ícono con un color más claro
   return (
-    <View className="size-full justify-center items-center mt-10 rounded-full">
+    <View className="size-full justify-center items-center mt-4 rounded-full">
       <Image source={icon} tintColor="#A8B5D5" className="size-5" />
-      <Text className="text-secondary text-base font-semibold ml-2">
-        {title}
-      </Text>
     </View>
   );
 };
