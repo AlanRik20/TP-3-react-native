@@ -28,14 +28,14 @@ const search = () => {
   } = useFetch(() => fetchMovies({ query: busqueda }), false);
 
   useEffect(() => {
-    const timeout = setTimeout( async () => {
+    const timeout = setTimeout(async () => {
       if (busqueda.trim()) {
         await loadMovies();
       } else {
         reset();
       }
-    }, 500);
-    return()=>clearTimeout(timeout)
+    });
+    return () => clearTimeout(timeout);
   }, [busqueda]);
 
   return (
@@ -95,7 +95,9 @@ const search = () => {
           !loading && !error ? (
             <View className="mt-10 px-5">
               <Text className="text-center text-gray-500">
-                {busqueda.trim()?"No se encontró la película":"Busca una película"}
+                {busqueda.trim()
+                  ? "No se encontró la película"
+                  : "Busca una película"}
               </Text>
             </View>
           ) : null

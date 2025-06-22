@@ -59,19 +59,24 @@ const MovieDetails = () => {
           <MovieInfo label="Overview" value={movie?.overview}/>
           <MovieInfo label="Genres" value={movie?.genres?.map((g)=>g.name).join('-')||'N/A'}/>
             <View className="flex flex-row justify-between w-1/2">
-              <MovieInfo label="Budget" value={`$${movie?.budget/1_000_000}million`}/>
+              <MovieInfo label="Budget" value={`$${movie?.budget/1_000_000} million`}/>
               <MovieInfo label="Revenue" value={`$${Math.round(movie?.revenue)/1_000_000}`}/>
             </View>
           <MovieInfo label="Production Companies" value={movie?.production_companies?.map((c)=>c.name).join('-')||'N/A'}/>
           
         </View>
       </ScrollView>
-      <TouchableOpacity className="absolute bottom-9 left-0 right-0 mx-5 bg-violet-400 rounded-ld py-3.5 flex flex-row items-center justify-center z-5" onPress={router.back}>
-        <Image source={icons.arrow} className="size-5 mr-1 mt-0.2 rotate-180" tintColor="#fff"/>
-        <Text className="text-white font-semibold text-base">
-            Volver
-        </Text>
-      </TouchableOpacity>
+      <TouchableOpacity
+  className="absolute top-10 left-5 bg-violet-400 size-12 rounded-full items-center justify-center z-50"
+  onPress={router.back}
+>
+  <Image
+    source={icons.arrow} // Podés reemplazar por un ícono de "X"
+    className="size-5 rotate-180"
+    tintColor="#fff"
+  />
+</TouchableOpacity>
+
     </View>
   );
 };
